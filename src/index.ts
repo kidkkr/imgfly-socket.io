@@ -6,7 +6,10 @@ dotenvFlow.config()
 const PORT = process.env.PORT
 const ALLOWED_ORIGIN = process.env.ALLOWED_ORIGIN
 
-const httpServer = createServer()
+const httpServer = createServer((req, res) => {
+  res.writeHead(200)
+  res.end()
+})
 
 const io = new Server(httpServer, {
   cors: {
