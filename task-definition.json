@@ -4,7 +4,12 @@
   "containerDefinitions": [
     {
       "dnsSearchDomains": null,
-      "environmentFiles": null,
+      "environmentFiles": [
+        {
+          "value": "arn:aws:s3:::imgfly-socket-io/.env",
+          "type": "s3"
+        }
+      ],
       "logConfiguration": {
         "logDriver": "awslogs",
         "secretOptions": null,
@@ -37,7 +42,7 @@
       "memoryReservation": null,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "imgfly-socket-io",
+      "image": "518483093035.dkr.ecr.ap-northeast-2.amazonaws.com/imgfly-socket-io:639eb4d61a29051db2367e9eec137a4aebef707c",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
@@ -59,12 +64,9 @@
   ],
   "placementConstraints": [],
   "memory": "512",
-  "taskRoleArn": null,
-  "compatibilities": [
-    "EC2",
-    "FARGATE"
-  ],
-  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:518483093035:task-definition/imgfly-socket-io-fg:1",
+  "taskRoleArn": "arn:aws:iam::518483093035:role/ecsTaskExecutionRole",
+  "compatibilities": ["EC2", "FARGATE"],
+  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:518483093035:task-definition/imgfly-socket-io-fg:4",
   "family": "imgfly-socket-io-fg",
   "requiresAttributes": [
     {
@@ -83,7 +85,25 @@
       "targetId": null,
       "targetType": null,
       "value": null,
+      "name": "com.amazonaws.ecs.capability.ecr-auth"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
       "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.task-iam-role"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "ecs.capability.execution-role-ecr-pull"
     },
     {
       "targetId": null,
@@ -99,12 +119,10 @@
     }
   ],
   "pidMode": null,
-  "requiresCompatibilities": [
-    "FARGATE"
-  ],
+  "requiresCompatibilities": ["FARGATE"],
   "networkMode": "awsvpc",
   "cpu": "256",
-  "revision": 1,
+  "revision": 4,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
