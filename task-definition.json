@@ -1,6 +1,6 @@
 {
   "ipcMode": null,
-  "executionRoleArn": "arn:aws:iam::127428068028:role/ecsTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::518483093035:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
       "dnsSearchDomains": null,
@@ -9,12 +9,12 @@
         "logDriver": "awslogs",
         "secretOptions": null,
         "options": {
-          "awslogs-group": "/ecs/imgfly-socket-io",
-          "awslogs-region": "us-east-2",
+          "awslogs-group": "/ecs/imgfly-socket-io-fg",
+          "awslogs-region": "ap-northeast-2",
           "awslogs-stream-prefix": "ecs"
         }
       },
-      "entryPoint": [],
+      "entryPoint": null,
       "portMappings": [
         {
           "hostPort": 80,
@@ -22,19 +22,10 @@
           "containerPort": 80
         }
       ],
-      "command": [],
+      "command": null,
       "linuxParameters": null,
       "cpu": 0,
-      "environment": [
-        {
-          "name": "ALLOWED_ORIGIN",
-          "value": "imgf.ly"
-        },
-        {
-          "name": "PORT",
-          "value": "80"
-        }
-      ],
+      "environment": [],
       "resourceRequirements": null,
       "ulimits": null,
       "dnsServers": null,
@@ -46,7 +37,7 @@
       "memoryReservation": null,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "imgfly/imgfly-socket-io:latest",
+      "image": "imgfly-socket-io",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
@@ -54,7 +45,7 @@
       "interactive": null,
       "healthCheck": null,
       "essential": true,
-      "links": [],
+      "links": null,
       "hostname": null,
       "extraHosts": null,
       "pseudoTerminal": null,
@@ -73,8 +64,8 @@
     "EC2",
     "FARGATE"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:us-east-2:127428068028:task-definition/imgfly-socket-io:1",
-  "family": "imgfly-socket-io",
+  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:518483093035:task-definition/imgfly-socket-io-fg:1",
+  "family": "imgfly-socket-io-fg",
   "requiresAttributes": [
     {
       "targetId": null,
