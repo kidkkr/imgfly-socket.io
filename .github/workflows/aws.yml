@@ -56,6 +56,8 @@ jobs:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REPOSITORY: imgfly-socket-io
           IMAGE_TAG: ${{ github.sha }}
+          PORT: 80
+          ALLOWED_ORIGIN: imgf.ly
         run: |
           # Build a docker container and
           # push it to ECR so that it can
